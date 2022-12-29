@@ -23,21 +23,22 @@ $(call inherit-product, device/samsung/greatlte/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 #RiceDroid Stuff
-RICE_CHIPSET := Exynos8895
-RICE_MAINTAINER := MiDoNaSR
-RICE_PACKAGE_TYPE := PIXEL
-SUSHI_BOOTANIMATION := 1080
-TARGET_ENABLE_BLUR := true
-TARGET_USE_PIXEL_FINGERPRINT := true
-WITH_GMS := true
-TARGET_OPTOUT_GOOGLE_TELEPHONY := true
 
+CHERISH_BUILD_TYPE=OFFICIAL
+TARGET_USES_MINI_GAPPS := true
+USE_PIXEL_CHARGING := true
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+ro.cherish.maintainer=MiDoNaSR
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_ENABLE_BLUR := true
+TARGET_INCLUDE_CARRIER_SETTINGS := true
+WITH_GMS := true
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := greatlte
-PRODUCT_NAME := lineage_greatlte
+PRODUCT_NAME := cherish_greatlte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-N950F
 PRODUCT_MANUFACTURER := samsung
